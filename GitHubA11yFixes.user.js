@@ -163,6 +163,9 @@ const DYNAMIC_TWEAKS = [
 	// Remove headings from folder and file lists.
 	{selector: 'table[aria-labelledby=folders-and-files] :is(h2, h3)',
 		tweak: makePresentational},
+	// Make filenames of files in the diff viewer headings.
+	{selector: '.file-header .file-info .Truncate:has(.Link--primary)',
+		tweak: el => makeHeading(el, 2)},
 ];
 
 /*** Lights, camera, action! ***/
